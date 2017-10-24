@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MY APP</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css" />
+</head>
+<body>
+
+<div class="ui secondary pointing menu">
+  <a class="active item" href="/">
+    Quotes
+  </a>
+</div>
+
+ 
+
+ <div class="ui raised very padded text container segment">
+  <h1 class="ui header">May Node and Express be with you.</h1>
+  <ul class="quotes">
+   <div class="ui celled list segment">
+  <% for(var i=0; i<quotes.length; i++) {%>
+    <div class="item">
+	  	<div class="content">
+      <span><%= quotes[i].name %></span>
+	     <span><%= quotes[i].quote %></span>
+	    </div>
+	
+   
+	</div>
+  <% } %>
+  </ul>
+  </div>
+
+
+  </div>
+
+  <div class="ui inverted divider"></div>
+  <div class="ui stacked segment">
+
+  <h2>Add a quote</h2>
+    <form class="ui form" action="/items" method="POST">
+        <div class="field">
+            <label>Name</label>
+            <input type="text" placeholder="name" name="name">
+        </div>
+    <div class="field">
+	<label>Quote</label>
+        <input type="text" placeholder="quote" name="quote">
+		</div>
+        <button class="ui button primary basic" type="submit">Submit</button>
+    </form>
+	</div>
+  <div class="ui vertical segment">
+    <h2>Replace last quote written by Master Yoda with a quote written by Darth Vadar</h2>
+    <button class="ui button negative basic" id="update"> Darth Vadar invades! </button>
+  </div>
+
+  <div class="ui piled segment">
+    <h2>Delete Darth Vadar's first quote</h2>
+    <button class="ui button negative basic" id="delete"> Delete first Darth Vadar quote </button>
+  </div>
+
+  <script src="main.js"></script>
+
+</body>
+</html>
